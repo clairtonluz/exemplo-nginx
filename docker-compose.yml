@@ -1,0 +1,20 @@
+version: "3.8"
+
+services: 
+    proxy:
+        build: ./proxy
+        ports: 
+            - 80:80
+        networks: 
+            - internal        
+    app1:
+        build: ./app1
+        networks: 
+            - internal        
+    app2:
+        build: ./app2
+        networks: 
+            - internal        
+
+networks:
+    internal:
